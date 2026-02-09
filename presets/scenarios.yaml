@@ -1,0 +1,80 @@
+# Scenario Presets Configuration
+# Pre-configured simulation scenarios
+
+scenarios:
+  dam_break:
+    name: "Dam Break"
+    description: "Classic SPH validation case"
+    domain_size: [3.0, 2.0, 1.0]
+    smoothing_length: 0.05
+    time_step: 0.0005
+    fluid_boxes:
+      - position: [0.2, 0.0, 0.1]
+        size: [0.6, 1.0, 0.8]
+        n_particles: 5000
+        fluid_type: "water"
+    duration: 5.0
+    
+  pouring:
+    name: "Pouring Liquid"
+    description: "Liquid poured from height"
+    domain_size: [2.0, 3.0, 2.0]
+    smoothing_length: 0.05
+    time_step: 0.0005
+    fluid_boxes:
+      - position: [0.8, 2.0, 0.8]
+        size: [0.4, 0.8, 0.4]
+        n_particles: 3000
+        fluid_type: "water"
+    duration: 6.0
+    
+  mixing_fluids:
+    name: "Fluid Mixing"
+    description: "Water and oil interaction"
+    domain_size: [2.0, 2.0, 2.0]
+    smoothing_length: 0.05
+    time_step: 0.0005
+    fluid_boxes:
+      - position: [0.5, 0.0, 0.5]
+        size: [1.0, 0.5, 1.0]
+        n_particles: 3000
+        fluid_type: "water"
+      - position: [0.5, 0.6, 0.5]
+        size: [1.0, 0.5, 1.0]
+        n_particles: 2000
+        fluid_type: "oil_light"
+    duration: 10.0
+    
+  viscosity_comparison:
+    name: "Viscosity Comparison"
+    description: "Compare different viscosities"
+    domain_size: [4.0, 2.0, 1.5]
+    smoothing_length: 0.05
+    time_step: 0.0005
+    fluid_boxes:
+      - position: [0.2, 0.8, 0.3]
+        size: [0.5, 0.8, 0.9]
+        n_particles: 2000
+        fluid_type: "water"
+      - position: [1.5, 0.8, 0.3]
+        size: [0.5, 0.8, 0.9]
+        n_particles: 2000
+        fluid_type: "oil_heavy"
+      - position: [2.8, 0.8, 0.3]
+        size: [0.5, 0.8, 0.9]
+        n_particles: 2000
+        fluid_type: "honey"
+    duration: 8.0
+    
+  small_test:
+    name: "Small Test"
+    description: "Quick test with few particles"
+    domain_size: [1.0, 1.0, 1.0]
+    smoothing_length: 0.05
+    time_step: 0.001
+    fluid_boxes:
+      - position: [0.3, 0.3, 0.3]
+        size: [0.4, 0.4, 0.4]
+        n_particles: 500
+        fluid_type: "water"
+    duration: 2.0
